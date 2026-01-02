@@ -1,0 +1,40 @@
+name: Deploy to VPS
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to VPS
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USERNAME }}
+                  key: ${{ secrets.VPS_SSH_KEY }}
+                  script: |
+                      # Navigate to project directory
+                      cd /home/shreebandhu/htdocs/shreebandhu.com || exit 1
+
+                      # Pull latest changes
+                      git fetch --all
+                      git reset --hard origin/main
+
+                      # Create .env file if missing (optional, assumes it exists or handled manually)
+                      # touch .env 
+
+                      # Build and deploy with Docker Compose
+                      # We assume docker and docker-compose (or docker compose) are installed
+                      if command -v docker-compose &> /dev/null; then
+                          docker-compose down || true
+                          docker-compose up -d --build
+                      else
+                          docker compose down || true
+                          docker compose up -d --build
+                      fi
+
+                      # Cleanup unused images
+                      docker image prune -f

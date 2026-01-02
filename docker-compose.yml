@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    container_name: shreebandhu-web
+    restart: always
+    # Using host network mode allows the container to access the host's localhost directly,
+    # which is required since the database is running on the host at 127.0.0.1.
+    network_mode: "host"
+    environment:
+      - PORT=3002
+      - NODE_ENV=production
+      # Add other environment variables here or use an env_file
+    env_file:
+      - .env
