@@ -1,0 +1,146 @@
+.categorySection {
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+  }
+
+  .productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .loading,
+  .error,
+  .noProducts {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: #d32f2f;
+  }
+  
+  .noProducts {
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .productsGrid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .sectionTitle {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .productsGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Carousel styles */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.productsCarousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px 15px 80px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+}
+
+.productsCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each product card will snap into place */
+.productsCarousel > * {
+  flex: 0 0 auto;
+  width: calc(100vw - 60px);
+  max-width: 310px;
+  scroll-snap-align: start; /* Snap to start of each card */
+}
+
+.carouselControls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .productsCarousel {
+    gap: 12px;
+    padding: 10px 10px 70px;
+    scroll-padding: 0 10px; /* Account for padding when snapping */
+  }
+  
+  .productsCarousel > * {
+    width: calc(100vw - 40px);
+    scroll-snap-align: center; /* Center snapping on mobile */
+  }
+  
+  .carouselControls {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productsCarousel {
+    gap: 8px;
+    padding: 10px 5px 60px;
+    scroll-padding: 0 5px;
+  }
+  
+  .productsCarousel > * {
+    width: calc(100vw - 30px);
+  }
+}
+
+
+.carouselButton {
+  width: 42px; /* Circle width */
+  height: 42px; /* Circle height */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%; /* Makes it circular */
+  font-size: 18px; /* Arrow size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.carouselButton:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}

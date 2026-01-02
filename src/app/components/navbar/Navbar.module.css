@@ -1,0 +1,424 @@
+/* Notification Bar */
+.notificationBar {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.notificationContent {
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+}
+
+.offerText {
+  display: inline-block;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Navbar Styles */
+.navbarWrapper {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 20;
+}
+
+.mainNav {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.leftBanner img,
+.centerLogo img {
+  height: 90px;
+  object-fit: contain;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchAndUser {
+  margin-right: 10px;
+}
+
+.searchBar {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 240px;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+}
+
+.navButtons {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profileDropdown {
+  position: relative;
+  z-index: 30;
+}
+
+.loginButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userName {
+  font-weight: 500;
+}
+
+.profileDropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 250px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.profileInfo {
+  padding: 12px;
+}
+
+.profileName {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.profileEmail,
+.profilePhone {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.dropdownButton {
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdownButton:hover {
+  background-color: #f5f5f5;
+}
+
+.cartIcon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.cartIcon svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Modal Styles */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin: 0 15px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.authButton {
+  background-color: #000;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.authButton:hover {
+  background-color: #333;
+}
+
+.authToggle {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+}
+
+.toggleButton {
+  color: #000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  background-color: #fde8e8;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.centerLogo .brandLogo {
+  width: auto;
+  height: 40px;
+}
+
+/* Mobile Layout Styles */
+.mobileNavContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.mobileBanner {
+  width: 100%;
+  text-align: center;
+}
+
+.mobileBanner img {
+  max-width: 100%;
+  height: auto;
+  max-height: 60px;
+}
+
+.mobileLogo {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.mobileLogo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.mobileBottomRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.mobileSearchBar {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.mobileIconsGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .mainNav {
+    padding: 10px 15px;
+  }
+
+  .mobileBanner img {
+    max-height: 90px;
+  }
+
+  .mobileLogo img {
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileBanner img {
+    max-height: 90px;
+  }
+
+  .mobileLogo img {
+    max-height: 35px;
+  }
+
+  .mobileBottomRow {
+    gap: 8px;
+  }
+
+  .mobileSearchBar {
+    padding: 8px;
+  }
+
+  .mobileIconsGroup {
+    gap: 10px;
+  }
+
+}
+
+
+/* Search Results Dropdown */
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.searchItem {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchItem:last-child {
+  border-bottom: none;
+}
+
+.searchItem:hover {
+  background-color: #f9f9f9;
+}
+
+.searchItemImage {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.searchItemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchItemName {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.searchItemPrice {
+  font-size: 12px;
+  color: #666;
+}

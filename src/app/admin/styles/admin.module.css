@@ -1,0 +1,260 @@
+/* src/app/admin/styles/admin.module.css */
+
+/* Variables */
+.variables {
+    --admin-primary: #4F46E5;
+    --admin-secondary: #818CF8;
+    --admin-accent: #C7D2FE;
+    --admin-bg: #F3F4F6;
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F3F4F6;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+}
+
+.navItem {
+    margin-bottom: 0.5rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #4B5563;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.navLink:hover {
+    background-color: #EEF2FF;
+    color: #4F46E5;
+}
+
+.activeLink {
+    background-color: #4F46E5;
+    color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.activeLink:hover {
+    background-color: #4338CA;
+    color: white;
+}
+
+.subMenu {
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid #E5E7EB;
+    margin-top: 0.5rem;
+}
+
+.subMenuLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #6B7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.subMenuLink:hover {
+    color: #4F46E5;
+}
+
+.userProfile {
+    padding: 1.5rem;
+    border-top: 1px solid #F3F4F6;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #E0E7FF;
+    color: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.userInfo {
+    flex: 1;
+}
+
+.userName {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1F2937;
+    margin: 0;
+}
+
+.userRole {
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin: 0;
+}
+
+/* Main Content */
+.mainContent {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2rem;
+    width: calc(100% - 280px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+    padding: 1.5rem;
+    border-bottom: 1px solid #F3F4F6;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.cardBody {
+    padding: 1.5rem;
+}
+
+/* Stats Card */
+.statsCard {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+.statsValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.statsLabel {
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+/* Controls */
+.button {
+    background: linear-gradient(to right, #4F46E5, #6366F1);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.3);
+}
+
+.buttonDanger {
+    background: #EF4444;
+    color: white;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Table */
+.tableContainer {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tableHeader {
+    background: #F9FAFB;
+    padding: 1rem;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.tableRow {
+    padding: 1rem;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    align-items: center;
+    transition: background 0.1s;
+}
+
+.tableRow:hover {
+    background: #F9FAFB;
+}

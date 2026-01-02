@@ -1,0 +1,16 @@
+.policy-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .policy-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .policy-page p {
+    color: #444;
+    line-height: 1.6;
+  }
+  

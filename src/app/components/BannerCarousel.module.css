@@ -1,0 +1,200 @@
+/* Banner Carousel Core */
+.bannerCarousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .bannerContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bannerWrapper {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 100%;
+  }
+  
+  .bannerSlide {
+    min-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bannerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 8s ease-out;
+  }
+  
+  .bannerSlide:hover .bannerImage {
+    transform: scale(1.05);
+  }
+  
+ 
+  /* Navigation Controls */
+  .bannerNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bannerNav:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .prev {
+    left: 30px;
+  }
+  
+  .next {
+    right: 30px;
+  }
+  
+  /* Dots Indicator */
+  .bannerDots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: white;
+    border-color: white;
+    transform: scale(1.2);
+  }
+  
+  .dot:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Loading and Error States */
+  .bannerLoading,
+  .bannerError,
+  .noBanners {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .bannerError {
+    color: #d32f2f;
+  }
+  
+  .noBanners {
+    color: #666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .bannerContainer {
+      height: 400px;
+    }
+  
+    .bannerContent h2 {
+      font-size: 2.5rem;
+    }
+  
+    .bannerContent p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bannerContainer {
+      height: 350px;
+      border-radius: 8px;
+    }
+  
+    .bannerContent {
+      padding: 1.5rem;
+      width: 95%;
+    }
+  
+    .bannerContent h2 {
+      font-size: 2rem;
+    }
+  
+    .bannerContent p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .bannerButton {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.8rem;
+    }
+  
+    .bannerNav {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .prev {
+      left: 15px;
+    }
+  
+    .next {
+      right: 15px;
+    }
+  
+    .bannerDots {
+      bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .bannerContainer {
+      height: 300px;
+    }
+  
+    .bannerContent h2 {
+      font-size: 1.8rem;
+    }
+  
+    .bannerContent p {
+      display: none;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
